@@ -16,13 +16,14 @@ enum CustomError: Error {
 class NetworkLayer {
     private let baseURL = "https://api.btcturk.com"
     private let graphBaseURL = "https://graph-api.btcturk.com"
-    
+
     func request<T: Codable>(model: T.Type,
                              baseURLType: BaseURLType = .regular,
                              apiURL: ApiURLs,
-                             completion: @escaping (Result<T, CustomError>) -> Void) {
+                             completion: @escaping (Result<T, CustomError>) -> Void)
+    {
         var urlString = ""
-        
+
         switch baseURLType {
         case .regular:
             urlString = baseURL + apiURL.getURLString()
@@ -31,14 +32,14 @@ class NetworkLayer {
         }
 
         var request = URLRequest(url: urlString.convertToURL())
-        
-        URLSession.shared.dataTask(with: request) {data, _, error in
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data else { return }
-            
+
             if let error = error {
                 completion(.failure(.requestError(error: error)))
             }
-            
+
             if let dataResponse = try? JSONDecoder().decode(model, from: data) {
                 completion(.success(dataResponse))
             } else {
@@ -56,7 +57,7 @@ enum BaseURLType {
 enum ApiURLs {
     case pairList
     case chartData
-    
+
     func getURLString() -> String {
         switch self {
         case .pairList:

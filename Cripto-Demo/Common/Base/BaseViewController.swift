@@ -9,24 +9,22 @@ import UIKit
 
 class BaseViewController: UIViewController {
     var navigationRouter: NavigationRouter {
-        get {
-            return NavigationRouter(navigationController: self.navigationController ?? UINavigationController())
-        }
+        return NavigationRouter(navigationController: navigationController ?? UINavigationController())
     }
-    
+
     private var spinner = UIActivityIndicatorView(style: .large)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-    
+
     private func setupView() {
         view.backgroundColor = AppColor.background.getColor()
         view.addSubview(spinner)
         setupSpinner()
     }
-    
+
     private func setupSpinner() {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.hidesWhenStopped = true

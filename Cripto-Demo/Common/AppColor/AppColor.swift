@@ -13,7 +13,7 @@ enum AppColor {
     case textWhite
     case positiveGreen
     case negativeRed
-    
+
     func getColor() -> UIColor {
         switch self {
         case .background:
