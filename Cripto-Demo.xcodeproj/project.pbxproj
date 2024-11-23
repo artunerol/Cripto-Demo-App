@@ -22,6 +22,8 @@
 		FCBC6A382CF1BD100005A923 /* PairChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A362CF1BD100005A923 /* PairChartVC.swift */; };
 		FCBC6A392CF1BD100005A923 /* PairChartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBC6A372CF1BD100005A923 /* PairChartVC.xib */; };
 		FCBC6A3B2CF1BD160005A923 /* PairChartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A3A2CF1BD160005A923 /* PairChartVM.swift */; };
+		FCBC6A3E2CF1C4380005A923 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A3D2CF1C4380005A923 /* NetworkLayer.swift */; };
+		FCBC6A422CF1C5EE0005A923 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A412CF1C5EE0005A923 /* String+URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		FCBC6A362CF1BD100005A923 /* PairChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairChartVC.swift; sourceTree = "<group>"; };
 		FCBC6A372CF1BD100005A923 /* PairChartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PairChartVC.xib; sourceTree = "<group>"; };
 		FCBC6A3A2CF1BD160005A923 /* PairChartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairChartVM.swift; sourceTree = "<group>"; };
+		FCBC6A3D2CF1C4380005A923 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		FCBC6A412CF1C5EE0005A923 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		FCBC69E72CF1AB3E0005A923 /* Cripto-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				FCBC6A3F2CF1C5E10005A923 /* Extensions */,
 				FCBC6A212CF1AFA70005A923 /* Common */,
 				FCBC6A202CF1AFA30005A923 /* Scenes */,
 				FCBC6A1F2CF1AF9A0005A923 /* Network */,
@@ -90,6 +95,8 @@
 		FCBC6A1F2CF1AF9A0005A923 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FCBC6A3C2CF1C42B0005A923 /* Models */,
+				FCBC6A3D2CF1C4380005A923 /* NetworkLayer.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -164,6 +171,29 @@
 				FCBC6A342CF1BCA20005A923 /* NavigationRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		FCBC6A3C2CF1C42B0005A923 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCBC6A3F2CF1C5E10005A923 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCBC6A402CF1C5E60005A923 /* String */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCBC6A402CF1C5E60005A923 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				FCBC6A412CF1C5EE0005A923 /* String+URL.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +274,10 @@
 				FCBC69E92CF1AB3E0005A923 /* AppDelegate.swift in Sources */,
 				FCBC6A352CF1BCA20005A923 /* NavigationRouter.swift in Sources */,
 				FCBC6A382CF1BD100005A923 /* PairChartVC.swift in Sources */,
+				FCBC6A3E2CF1C4380005A923 /* NetworkLayer.swift in Sources */,
 				FCBC6A2C2CF1B0950005A923 /* PairListVM.swift in Sources */,
 				FCBC6A322CF1BB120005A923 /* AppColor.swift in Sources */,
+				FCBC6A422CF1C5EE0005A923 /* String+URL.swift in Sources */,
 				FCBC69EB2CF1AB3E0005A923 /* SceneDelegate.swift in Sources */,
 				FCBC6A262CF1B01F0005A923 /* AppNavigationController.swift in Sources */,
 				FCBC6A2F2CF1BAEB0005A923 /* BaseViewController.swift in Sources */,
