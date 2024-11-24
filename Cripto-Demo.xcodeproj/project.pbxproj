@@ -32,6 +32,7 @@
 		FCBC6A582CF332C70005A923 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A572CF332C70005A923 /* AppFont.swift */; };
 		FCBC6A5E2CF37AB30005A923 /* Userdefaults+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A5D2CF37AB30005A923 /* Userdefaults+Save.swift */; };
 		FCBC6A612CF37D240005A923 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A602CF37D240005A923 /* UserDefaultsKeys.swift */; };
+		FCBC6A642CF39F6A0005A923 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = FCBC6A632CF39F6A0005A923 /* DGCharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBC6A642CF39F6A0005A923 /* DGCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +294,9 @@
 			dependencies = (
 			);
 			name = "Cripto-Demo";
+			packageProductDependencies = (
+				FCBC6A632CF39F6A0005A923 /* DGCharts */,
+			);
 			productName = "Cripto-Demo";
 			productReference = FCBC69E52CF1AB3E0005A923 /* Cripto-Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +325,9 @@
 				Base,
 			);
 			mainGroup = FCBC69DC2CF1AB3E0005A923;
+			packageReferences = (
+				FCBC6A622CF39F6A0005A923 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = FCBC69E62CF1AB3E0005A923 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCBC6A622CF39F6A0005A923 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCBC6A632CF39F6A0005A923 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCBC6A622CF39F6A0005A923 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FCBC69DD2CF1AB3E0005A923 /* Project object */;
 }

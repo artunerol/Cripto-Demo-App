@@ -23,8 +23,6 @@ class PairListVC: BaseViewController {
         configureUI()
         fetch()
         listenDataHandler()
-//        UserDefaults.standard.removeObject(forKey: UserdefaultsKeys.favoritePairs)
-//        viewModel.favoritePairList = []
     }
     
     private func listenDataHandler() {
