@@ -10,8 +10,11 @@ import UIKit
 class PairListVC: BaseViewController {
     // MARK: - Outlets
     @IBOutlet private weak var favoritesCollectionView: UICollectionView!
-    @IBOutlet private weak var pairsTableView: UITableView!
-    let asd: Double = 32.1234897
+    @IBOutlet private weak var pairsTableView: UITableView! {
+        didSet {
+            pairsTableView.separatorStyle = .singleLine
+        }
+    }
     
     // MARK: - Variables
     private let viewModel = PairListVM()
@@ -21,7 +24,28 @@ class PairListVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        listenNetworkChanges()
+        fetch()
+    }
+    
+    private func fetch() {
+        toggleLoading(true)
         viewModel.fetchList()
+    }
+    
+    private func listenNetworkChanges() {
+        viewModel.didFinishNetwork = { change in
+            switch change {
+            case .success:
+                DispatchQueue.main.async {
+                    self.toggleLoading(false)
+                    self.pairsTableView.reloadData()
+                }
+            case .fail(_):
+                print("")
+                self.toggleLoading(false)
+            }
+        }
     }
 }
 
@@ -29,7 +53,6 @@ class PairListVC: BaseViewController {
 // MARK: - Helpers
 extension PairListVC {
     private func configureUI() {
-        view.backgroundColor = .red
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
         favoritesCollectionView.register(UINib(nibName: FavoritePairsCollectionViewCell.getNibName(),
@@ -59,13 +82,18 @@ extension PairListVC: UICollectionViewDataSource, UICollectionViewDelegate {
 
 // MARK: - CollectionView delegate/datasource
 extension PairListVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel.pairList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PairListTableViewCell.identifier,
                                                        for: indexPath) as? PairListTableViewCell else { return UITableViewCell() }
+        cell.configure(with: viewModel.pairList[indexPath.row])
         return cell
     }
 }

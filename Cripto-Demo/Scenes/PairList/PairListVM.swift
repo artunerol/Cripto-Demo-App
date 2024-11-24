@@ -7,8 +7,16 @@
 
 import Foundation
 
+enum PairListNetworkHandler {
+    case success
+    case fail(CustomError)
+}
+
 class PairListVM {
     private let network = NetworkLayer()
+    var didFinishNetwork: ((PairListNetworkHandler) -> Void)?
+    
+    var pairList: [Pair] = []
     
     func fetchList() {
         network
@@ -16,9 +24,10 @@ class PairListVM {
                      apiURL: .pairList) { result in
                 switch result {
                 case .success(let response):
-                    print(response)
+                    self.pairList = response.data
+                    self.didFinishNetwork?(.success)
                 case .failure(let error):
-                    break
+                    self.didFinishNetwork?(.fail(error))
                 }
             }
     }

@@ -9,7 +9,7 @@ import Foundation
 
 enum CustomError: Error {
     case requestError(error: Error)
-    case throwError
+    case decodingError
     case defaultError
 }
 
@@ -31,7 +31,7 @@ class NetworkLayer {
             urlString = graphBaseURL + apiURL.getURLString()
         }
 
-        var request = URLRequest(url: urlString.convertToURL())
+        let request = URLRequest(url: urlString.convertToURL())
         
         URLSession.shared.dataTask(with: request) { data, _, responseError in
             guard let data = data else { return }
@@ -48,7 +48,7 @@ class NetworkLayer {
             
             catch {
                 print(error)
-                completion(.failure(.throwError))
+                completion(.failure(.decodingError))
             }
             
         }.resume()

@@ -29,6 +29,7 @@
 		FCBC6A4D2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBC6A4B2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.xib */; };
 		FCBC6A502CF1D3070005A923 /* UIView+Nibname.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A4F2CF1D3070005A923 /* UIView+Nibname.swift */; };
 		FCBC6A522CF2F74E0005A923 /* PairListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A512CF2F74E0005A923 /* PairListModel.swift */; };
+		FCBC6A582CF332C70005A923 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A572CF332C70005A923 /* AppFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		FCBC6A4B2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritePairsCollectionViewCell.xib; sourceTree = "<group>"; };
 		FCBC6A4F2CF1D3070005A923 /* UIView+Nibname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nibname.swift"; sourceTree = "<group>"; };
 		FCBC6A512CF2F74E0005A923 /* PairListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairListModel.swift; sourceTree = "<group>"; };
+		FCBC6A572CF332C70005A923 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		FCBC6A212CF1AFA70005A923 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FCBC6A562CF332C10005A923 /* AppFont */,
 				FCBC6A432CF1C89C0005A923 /* Components */,
 				FCBC6A302CF1BB0B0005A923 /* AppColor */,
 				FCBC6A2D2CF1BAE10005A923 /* Base */,
@@ -243,6 +246,14 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		FCBC6A562CF332C10005A923 /* AppFont */ = {
+			isa = PBXGroup;
+			children = (
+				FCBC6A572CF332C70005A923 /* AppFont.swift */,
+			);
+			path = AppFont;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,6 +341,7 @@
 				FCBC6A322CF1BB120005A923 /* AppColor.swift in Sources */,
 				FCBC6A482CF1C8CF0005A923 /* PairListTableViewCell.swift in Sources */,
 				FCBC6A422CF1C5EE0005A923 /* String+URL.swift in Sources */,
+				FCBC6A582CF332C70005A923 /* AppFont.swift in Sources */,
 				FCBC69EB2CF1AB3E0005A923 /* SceneDelegate.swift in Sources */,
 				FCBC6A262CF1B01F0005A923 /* AppNavigationController.swift in Sources */,
 				FCBC6A2F2CF1BAEB0005A923 /* BaseViewController.swift in Sources */,

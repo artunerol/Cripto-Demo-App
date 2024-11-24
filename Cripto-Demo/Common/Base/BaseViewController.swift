@@ -39,10 +39,12 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController {
     func toggleLoading(_ toggle: Bool) {
-        if toggle {
-            spinner.startAnimating()
-        } else {
-            spinner.stopAnimating()
+        DispatchQueue.main.async {
+            if toggle {
+                self.spinner.startAnimating()
+            } else {
+                self.spinner.stopAnimating()
+            }
         }
     }
 }
