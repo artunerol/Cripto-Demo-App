@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PairListVC" customModule="Cripto_Demo" customModuleProvider="target">
             <connections>
+                <outlet property="favoriteLabel" destination="9A2-ag-Fv6" id="yCF-Ew-FWR"/>
                 <outlet property="favoritesCollectionView" destination="CWL-9P-2FG" id="8Ud-dE-GCU"/>
                 <outlet property="pairsTableView" destination="6Qa-yB-be3" id="WCh-MR-DH2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,8 +26,8 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azZ-lu-awu">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A2-ag-Fv6">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="25"/>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9A2-ag-Fv6">
+                                    <rect key="frame" x="0.0" y="-25" width="393" height="25"/>
                                     <color key="backgroundColor" red="0.035294117649999998" green="0.062745098040000002" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="kNv-C9-v5J"/>
@@ -35,8 +36,8 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-9P-2FG">
-                                    <rect key="frame" x="0.0" y="33" width="393" height="80"/>
+                                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-9P-2FG">
+                                    <rect key="frame" x="0.0" y="-80" width="393" height="80"/>
                                     <color key="backgroundColor" red="0.035294117649999998" green="0.062745098040000002" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="3np-GD-duV"/>
@@ -49,7 +50,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pairs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inr-wD-u6q">
-                                    <rect key="frame" x="0.0" y="121" width="393" height="25"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="25"/>
                                     <color key="backgroundColor" red="0.035294117647058823" green="0.062745098039215685" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="Da5-kZ-Wjs"/>
@@ -59,7 +60,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Qa-yB-be3">
-                                    <rect key="frame" x="0.0" y="154" width="393" height="605"/>
+                                    <rect key="frame" x="0.0" y="33" width="393" height="726"/>
                                     <color key="backgroundColor" red="0.035294117649999998" green="0.062745098040000002" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableView>
                             </subviews>

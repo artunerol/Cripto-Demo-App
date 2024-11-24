@@ -47,7 +47,7 @@ class FavoritePairsCollectionViewCell: UICollectionViewCell {
     // MARK: - Helpers
     
     func configure(with model: Pair) {
-        pairNameLabel.text = model.pair
+        pairNameLabel.text = model.pairName
         lastLabel.text = String(model.last)
         dailyPercentageLabel.text = "%" + String(model.dailyPercent)
         

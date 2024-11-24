@@ -14,8 +14,19 @@ struct PairListModel: Codable {
 
 // MARK: - Pair
 struct Pair: Codable {
-    let pair, pairNormalized: String
+    let pairName, pairNormalized: String
     let last: Double
     let volume, dailyPercent: Double
     let numeratorSymbol: String
+    var isFavorite: Bool? = false
+    
+    enum CodingKeys: String, CodingKey {
+        case pairName = "pair"
+        case pairNormalized
+        case last
+        case volume
+        case dailyPercent
+        case numeratorSymbol
+        case isFavorite
+    }
 }

@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol PairListCellDelegate: AnyObject {
+    func didTapFavorite(pairModel: Pair?, isFavorite: Bool)
+}
+
 class PairListTableViewCell: UITableViewCell {
+    weak var delegate: (any PairListCellDelegate)?
     static let identifier = "PairListTableViewCell"
+    private var isFavorite: Bool = false
+    var pairModel: Pair?
     
     // MARK: - Outlets
     @IBOutlet private weak var cellContentView: UIView!
@@ -37,6 +44,7 @@ class PairListTableViewCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var favoriteButtonOutlet: UIButton!
     // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,10 +61,13 @@ class PairListTableViewCell: UITableViewCell {
     // MARK: - Helpers
     
     func configure(with model: Pair) {
-        pairNameLabel.text = model.pair
+        self.pairModel = model
+        pairNameLabel.text = model.pairName
         lastValueLabel.text = String(model.last)
         dailyPercentageLabel.text = "%" + String(model.dailyPercent)
         volumeLabel.text = String(model.dailyPercent) + model.numeratorSymbol
+        isFavorite = model.isFavorite ?? false
+        toggleFavoriteButtonImage()
         
         if model.dailyPercent > 0 {
             dailyPercentageLabel.textColor = .green
@@ -64,6 +75,22 @@ class PairListTableViewCell: UITableViewCell {
             dailyPercentageLabel.textColor = .lightGray
         } else if model.dailyPercent < 0 {
             dailyPercentageLabel.textColor = .red
+        }
+    }
+    
+    @IBAction func didTapFavorite(_ sender: Any) {
+        isFavorite.toggle()
+        delegate?.didTapFavorite(pairModel: pairModel, isFavorite: isFavorite)
+        toggleFavoriteButtonImage()
+    }
+    
+    private func toggleFavoriteButtonImage() {
+        DispatchQueue.main.async {
+            if self.isFavorite {
+                self.favoriteButtonOutlet.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            } else {
+                self.favoriteButtonOutlet.setImage(UIImage(systemName: "star"), for: .normal)
+            }
         }
     }
 }

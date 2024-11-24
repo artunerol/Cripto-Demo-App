@@ -30,6 +30,8 @@
 		FCBC6A502CF1D3070005A923 /* UIView+Nibname.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A4F2CF1D3070005A923 /* UIView+Nibname.swift */; };
 		FCBC6A522CF2F74E0005A923 /* PairListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A512CF2F74E0005A923 /* PairListModel.swift */; };
 		FCBC6A582CF332C70005A923 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A572CF332C70005A923 /* AppFont.swift */; };
+		FCBC6A5E2CF37AB30005A923 /* Userdefaults+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A5D2CF37AB30005A923 /* Userdefaults+Save.swift */; };
+		FCBC6A612CF37D240005A923 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A602CF37D240005A923 /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		FCBC6A4F2CF1D3070005A923 /* UIView+Nibname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nibname.swift"; sourceTree = "<group>"; };
 		FCBC6A512CF2F74E0005A923 /* PairListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairListModel.swift; sourceTree = "<group>"; };
 		FCBC6A572CF332C70005A923 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		FCBC6A5D2CF37AB30005A923 /* Userdefaults+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Userdefaults+Save.swift"; sourceTree = "<group>"; };
+		FCBC6A602CF37D240005A923 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		FCBC69E72CF1AB3E0005A923 /* Cripto-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				FCBC6A5F2CF37D1C0005A923 /* Utils */,
 				FCBC6A3F2CF1C5E10005A923 /* Extensions */,
 				FCBC6A212CF1AFA70005A923 /* Common */,
 				FCBC6A202CF1AFA30005A923 /* Scenes */,
@@ -197,6 +202,7 @@
 		FCBC6A3F2CF1C5E10005A923 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FCBC6A5C2CF37AAA0005A923 /* UserDefaults */,
 				FCBC6A4E2CF1D2F90005A923 /* UIView */,
 				FCBC6A402CF1C5E60005A923 /* String */,
 			);
@@ -252,6 +258,22 @@
 				FCBC6A572CF332C70005A923 /* AppFont.swift */,
 			);
 			path = AppFont;
+			sourceTree = "<group>";
+		};
+		FCBC6A5C2CF37AAA0005A923 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				FCBC6A5D2CF37AB30005A923 /* Userdefaults+Save.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		FCBC6A5F2CF37D1C0005A923 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FCBC6A602CF37D240005A923 /* UserDefaultsKeys.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,9 +356,11 @@
 				FCBC6A3B2CF1BD160005A923 /* PairChartVM.swift in Sources */,
 				FCBC69E92CF1AB3E0005A923 /* AppDelegate.swift in Sources */,
 				FCBC6A352CF1BCA20005A923 /* NavigationRouter.swift in Sources */,
+				FCBC6A612CF37D240005A923 /* UserDefaultsKeys.swift in Sources */,
 				FCBC6A382CF1BD100005A923 /* PairChartVC.swift in Sources */,
 				FCBC6A522CF2F74E0005A923 /* PairListModel.swift in Sources */,
 				FCBC6A3E2CF1C4380005A923 /* NetworkLayer.swift in Sources */,
+				FCBC6A5E2CF37AB30005A923 /* Userdefaults+Save.swift in Sources */,
 				FCBC6A2C2CF1B0950005A923 /* PairListVM.swift in Sources */,
 				FCBC6A322CF1BB120005A923 /* AppColor.swift in Sources */,
 				FCBC6A482CF1C8CF0005A923 /* PairListTableViewCell.swift in Sources */,

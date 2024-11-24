@@ -9,12 +9,9 @@ import UIKit
 
 class PairListVC: BaseViewController {
     // MARK: - Outlets
+    @IBOutlet private weak var favoriteLabel: UILabel!
     @IBOutlet private weak var favoritesCollectionView: UICollectionView!
-    @IBOutlet private weak var pairsTableView: UITableView! {
-        didSet {
-            pairsTableView.separatorStyle = .singleLine
-        }
-    }
+    @IBOutlet private weak var pairsTableView: UITableView!
     
     // MARK: - Variables
     private let viewModel = PairListVM()
@@ -24,35 +21,41 @@ class PairListVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        listenNetworkChanges()
         fetch()
+        listenDataHandler()
+//        UserDefaults.standard.removeObject(forKey: UserdefaultsKeys.favoritePairs)
+//        viewModel.favoritePairList = []
     }
     
-    private func fetch() {
-        toggleLoading(true)
-        viewModel.fetchList()
-    }
-    
-    private func listenNetworkChanges() {
-        viewModel.didFinishNetwork = { change in
+    private func listenDataHandler() {
+        viewModel.dataChangeHandler = { change in
             switch change {
-            case .success:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            case .updateFavoritePairs:
+                DispatchQueue.main.async {
+                    self.favoriteLabel.isHidden = self.viewModel.favoritePairList.isEmpty
+                    self.favoritesCollectionView.isHidden = self.viewModel.favoritePairList.isEmpty
+                    
+                    self.favoritesCollectionView.reloadData()
+                }
+            case .fail(_):
+                print("Any kind of error handling pop-up can be shown here")
+                self.toggleLoading(false)
+            case .updatePairLists:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.toggleLoading(false)
                 }
                 
                 DispatchQueue.main.async {
+                    self.favoriteLabel.isHidden = self.viewModel.favoritePairList.isEmpty
+                    self.favoritesCollectionView.isHidden = self.viewModel.favoritePairList.isEmpty
+                    
                     self.favoritesCollectionView.reloadData()
                     self.pairsTableView.reloadData()
                 }
-            case .fail(_):
-                print("")
-                self.toggleLoading(false)
             }
         }
     }
 }
-
 
 // MARK: - Helpers
 extension PairListVC {
@@ -69,6 +72,11 @@ extension PairListVC {
                                       bundle: nil),
                                 forCellReuseIdentifier: PairListTableViewCell.identifier)
     }
+    
+    private func fetch() {
+        toggleLoading(true)
+        viewModel.fetchList()
+    }
 }
 
 // MARK: - CollectionView delegate/datasource
@@ -77,13 +85,13 @@ extension PairListVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
         CGSize(width: 80, height: 80)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.pairList.count
+        viewModel.favoritePairList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritePairsCollectionViewCell.identifier,
-                                                       for: indexPath) as? FavoritePairsCollectionViewCell else { return UICollectionViewCell() }
-        cell.configure(with: viewModel.pairList[indexPath.row])
+                                                            for: indexPath) as? FavoritePairsCollectionViewCell else { return UICollectionViewCell() }
+        cell.configure(with: viewModel.favoritePairList[indexPath.row])
         return cell
     }
 }
@@ -101,7 +109,16 @@ extension PairListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PairListTableViewCell.identifier,
                                                        for: indexPath) as? PairListTableViewCell else { return UITableViewCell() }
+        cell.delegate = self
         cell.configure(with: viewModel.pairList[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - DidTapFavorite
+extension PairListVC: PairListCellDelegate {
+    func didTapFavorite(pairModel: Pair?, isFavorite: Bool) {
+        guard let pairUnwrapped = pairModel else { return }
+        viewModel.updateFavoritePairs(with: pairUnwrapped, isFavorite: isFavorite)
     }
 }
