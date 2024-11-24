@@ -32,19 +32,25 @@ class NetworkLayer {
         }
 
         var request = URLRequest(url: urlString.convertToURL())
-
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        
+        URLSession.shared.dataTask(with: request) { data, _, responseError in
             guard let data = data else { return }
-
-            if let error = error {
-                completion(.failure(.requestError(error: error)))
+            var responseData: T
+            
+            if let responseError = responseError {
+                completion(.failure(.requestError(error: responseError)))
             }
-
-            if let dataResponse = try? JSONDecoder().decode(model, from: data) {
-                completion(.success(dataResponse))
-            } else {
+            
+            do {
+                responseData = try JSONDecoder().decode(model, from: data)
+                completion(.success(responseData))
+            }
+            
+            catch {
+                print(error)
                 completion(.failure(.throwError))
             }
+            
         }.resume()
     }
 }

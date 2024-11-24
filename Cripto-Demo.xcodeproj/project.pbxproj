@@ -28,6 +28,7 @@
 		FCBC6A4C2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A4A2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.swift */; };
 		FCBC6A4D2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBC6A4B2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.xib */; };
 		FCBC6A502CF1D3070005A923 /* UIView+Nibname.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A4F2CF1D3070005A923 /* UIView+Nibname.swift */; };
+		FCBC6A522CF2F74E0005A923 /* PairListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A512CF2F74E0005A923 /* PairListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		FCBC6A4A2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePairsCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCBC6A4B2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritePairsCollectionViewCell.xib; sourceTree = "<group>"; };
 		FCBC6A4F2CF1D3070005A923 /* UIView+Nibname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nibname.swift"; sourceTree = "<group>"; };
+		FCBC6A512CF2F74E0005A923 /* PairListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		FCBC6A3C2CF1C42B0005A923 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FCBC6A512CF2F74E0005A923 /* PairListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				FCBC69E92CF1AB3E0005A923 /* AppDelegate.swift in Sources */,
 				FCBC6A352CF1BCA20005A923 /* NavigationRouter.swift in Sources */,
 				FCBC6A382CF1BD100005A923 /* PairChartVC.swift in Sources */,
+				FCBC6A522CF2F74E0005A923 /* PairListModel.swift in Sources */,
 				FCBC6A3E2CF1C4380005A923 /* NetworkLayer.swift in Sources */,
 				FCBC6A2C2CF1B0950005A923 /* PairListVM.swift in Sources */,
 				FCBC6A322CF1BB120005A923 /* AppColor.swift in Sources */,

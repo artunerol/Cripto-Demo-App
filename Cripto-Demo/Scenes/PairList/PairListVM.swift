@@ -7,4 +7,19 @@
 
 import Foundation
 
-class PairListVM {}
+class PairListVM {
+    private let network = NetworkLayer()
+    
+    func fetchList() {
+        network
+            .request(model: PairListModel.self,
+                     apiURL: .pairList) { result in
+                switch result {
+                case .success(let response):
+                    print(response)
+                case .failure(let error):
+                    break
+                }
+            }
+    }
+}

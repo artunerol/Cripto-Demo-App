@@ -7,13 +7,21 @@
 
 import UIKit
 
-class PairListVC: UIViewController {
+class PairListVC: BaseViewController {
+    // MARK: - Outlets
     @IBOutlet private weak var favoritesCollectionView: UICollectionView!
     @IBOutlet private weak var pairsTableView: UITableView!
+    let asd: Double = 32.1234897
+    
+    // MARK: - Variables
+    private let viewModel = PairListVM()
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        viewModel.fetchList()
     }
 }
 
