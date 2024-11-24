@@ -20,6 +20,7 @@ class NetworkLayer {
     func request<T: Codable>(model: T.Type,
                              baseURLType: BaseURLType = .regular,
                              apiURL: ApiURLs,
+                             queryParams: [URLQueryItem] = [],
                              completion: @escaping (Result<T, CustomError>) -> Void)
     {
         var urlString = ""
@@ -31,7 +32,8 @@ class NetworkLayer {
             urlString = graphBaseURL + apiURL.getURLString()
         }
 
-        let request = URLRequest(url: urlString.convertToURL())
+        var request = URLRequest(url: urlString.convertToURL())
+        request.url?.append(queryItems: queryParams)
         
         URLSession.shared.dataTask(with: request) { data, _, responseError in
             guard let data = data else { return }

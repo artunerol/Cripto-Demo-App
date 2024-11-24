@@ -19,22 +19,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wXh-OG-DRI">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="4" y="4" width="92" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5L-tz-vIz">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fv-fL-gYu">
-                                        <rect key="frame" x="0.0" y="34.666666666666664" width="100" height="30.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="32" width="92" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OL-5U-4IM">
-                                        <rect key="frame" x="0.0" y="69.333333333333329" width="100" height="30.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="64" width="92" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,12 +42,12 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.5607843137254902" green="0.59607843137254901" blue="0.65098039215686276" alpha="0.3597889072847682" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.5607843137254902" green="0.59607843137254901" blue="0.65098039215686276" alpha="0.35999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wXh-OG-DRI" firstAttribute="leading" secondItem="c4i-q6-KBe" secondAttribute="leading" id="0Pl-K2-bUc"/>
-                            <constraint firstAttribute="bottom" secondItem="wXh-OG-DRI" secondAttribute="bottom" id="j8v-T3-xzk"/>
-                            <constraint firstItem="wXh-OG-DRI" firstAttribute="top" secondItem="c4i-q6-KBe" secondAttribute="top" id="rYy-Gy-s3o"/>
-                            <constraint firstAttribute="trailing" secondItem="wXh-OG-DRI" secondAttribute="trailing" id="ska-lf-iSy"/>
+                            <constraint firstItem="wXh-OG-DRI" firstAttribute="leading" secondItem="c4i-q6-KBe" secondAttribute="leading" constant="4" id="0Pl-K2-bUc"/>
+                            <constraint firstAttribute="bottom" secondItem="wXh-OG-DRI" secondAttribute="bottom" constant="4" id="j8v-T3-xzk"/>
+                            <constraint firstItem="wXh-OG-DRI" firstAttribute="top" secondItem="c4i-q6-KBe" secondAttribute="top" constant="4" id="rYy-Gy-s3o"/>
+                            <constraint firstAttribute="trailing" secondItem="wXh-OG-DRI" secondAttribute="trailing" constant="4" id="ska-lf-iSy"/>
                         </constraints>
                     </view>
                 </subviews>

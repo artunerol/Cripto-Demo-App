@@ -80,7 +80,7 @@ extension PairListVC {
 // MARK: - CollectionView delegate/datasource
 extension PairListVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 80, height: 80)
+        CGSize(width: 100, height: 100)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.favoritePairList.count
@@ -110,6 +110,10 @@ extension PairListVC: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.configure(with: viewModel.pairList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationRouter.navigate(toVC: .pairChart(vm: PairChartVM(selectedPair: viewModel.pairList[indexPath.row])))
     }
 }
 

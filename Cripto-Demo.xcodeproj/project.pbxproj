@@ -33,6 +33,7 @@
 		FCBC6A5E2CF37AB30005A923 /* Userdefaults+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A5D2CF37AB30005A923 /* Userdefaults+Save.swift */; };
 		FCBC6A612CF37D240005A923 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A602CF37D240005A923 /* UserDefaultsKeys.swift */; };
 		FCBC6A642CF39F6A0005A923 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = FCBC6A632CF39F6A0005A923 /* DGCharts */; };
+		FCBC6A672CF3B2720005A923 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A662CF3B2720005A923 /* ChartModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		FCBC6A572CF332C70005A923 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		FCBC6A5D2CF37AB30005A923 /* Userdefaults+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Userdefaults+Save.swift"; sourceTree = "<group>"; };
 		FCBC6A602CF37D240005A923 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		FCBC6A662CF3B2720005A923 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				FCBC6A512CF2F74E0005A923 /* PairListModel.swift */,
+				FCBC6A662CF3B2720005A923 /* ChartModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				FCBC6A2C2CF1B0950005A923 /* PairListVM.swift in Sources */,
 				FCBC6A322CF1BB120005A923 /* AppColor.swift in Sources */,
 				FCBC6A482CF1C8CF0005A923 /* PairListTableViewCell.swift in Sources */,
+				FCBC6A672CF3B2720005A923 /* ChartModel.swift in Sources */,
 				FCBC6A422CF1C5EE0005A923 /* String+URL.swift in Sources */,
 				FCBC6A582CF332C70005A923 /* AppFont.swift in Sources */,
 				FCBC69EB2CF1AB3E0005A923 /* SceneDelegate.swift in Sources */,

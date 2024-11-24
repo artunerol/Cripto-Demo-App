@@ -15,7 +15,7 @@ class NavigationRouter {
     }
 
     func navigate(toVC: NavigationEnum) {
-        baseNC.present(toVC.getViewController(), animated: true)
+        baseNC.pushViewController(toVC.getViewController(), animated: true)
     }
 }
 

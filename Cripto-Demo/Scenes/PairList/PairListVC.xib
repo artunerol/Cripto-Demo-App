@@ -37,10 +37,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-9P-2FG">
-                                    <rect key="frame" x="0.0" y="-80" width="393" height="80"/>
+                                    <rect key="frame" x="0.0" y="-110" width="393" height="110"/>
                                     <color key="backgroundColor" red="0.035294117649999998" green="0.062745098040000002" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="80" id="3np-GD-duV"/>
+                                        <constraint firstAttribute="height" constant="110" id="3np-GD-duV"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SLb-4V-NIF">
                                         <size key="itemSize" width="128" height="128"/>
