@@ -10,7 +10,6 @@
 		FCBC69E92CF1AB3E0005A923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC69E82CF1AB3E0005A923 /* AppDelegate.swift */; };
 		FCBC69EB2CF1AB3E0005A923 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC69EA2CF1AB3E0005A923 /* SceneDelegate.swift */; };
 		FCBC69F22CF1AB3F0005A923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCBC69F12CF1AB3F0005A923 /* Assets.xcassets */; };
-		FCBC69F52CF1AB3F0005A923 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FCBC69F42CF1AB3F0005A923 /* Base */; };
 		FCBC6A262CF1B01F0005A923 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A252CF1B01F0005A923 /* AppNavigationController.swift */; };
 		FCBC6A292CF1B08D0005A923 /* PairListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC6A272CF1B08D0005A923 /* PairListVC.swift */; };
 		FCBC6A2A2CF1B08D0005A923 /* PairListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBC6A282CF1B08D0005A923 /* PairListVC.xib */; };
@@ -41,7 +40,6 @@
 		FCBC69E82CF1AB3E0005A923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBC69EA2CF1AB3E0005A923 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FCBC69F12CF1AB3F0005A923 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FCBC69F42CF1AB3F0005A923 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCBC69F62CF1AB3F0005A923 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCBC6A252CF1B01F0005A923 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		FCBC6A272CF1B08D0005A923 /* PairListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairListVC.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				FCBC69E82CF1AB3E0005A923 /* AppDelegate.swift */,
 				FCBC69EA2CF1AB3E0005A923 /* SceneDelegate.swift */,
 				FCBC69F12CF1AB3F0005A923 /* Assets.xcassets */,
-				FCBC69F32CF1AB3F0005A923 /* LaunchScreen.storyboard */,
 				FCBC69F62CF1AB3F0005A923 /* Info.plist */,
 			);
 			path = "Cripto-Demo";
@@ -348,7 +345,6 @@
 				FCBC6A2A2CF1B08D0005A923 /* PairListVC.xib in Resources */,
 				FCBC69F22CF1AB3F0005A923 /* Assets.xcassets in Resources */,
 				FCBC6A4D2CF1C8E60005A923 /* FavoritePairsCollectionViewCell.xib in Resources */,
-				FCBC69F52CF1AB3F0005A923 /* Base in Resources */,
 				FCBC6A492CF1C8CF0005A923 /* PairListTableViewCell.xib in Resources */,
 				FCBC6A392CF1BD100005A923 /* PairChartVC.xib in Resources */,
 			);
@@ -385,17 +381,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FCBC69F32CF1AB3F0005A923 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCBC69F42CF1AB3F0005A923 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FCBC6A0D2CF1AB3F0005A923 /* Debug */ = {
