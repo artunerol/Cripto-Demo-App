@@ -37,8 +37,12 @@ class PairListVC: BaseViewController {
         viewModel.didFinishNetwork = { change in
             switch change {
             case .success:
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                     self.toggleLoading(false)
+                }
+                
+                DispatchQueue.main.async {
+                    self.favoritesCollectionView.reloadData()
                     self.pairsTableView.reloadData()
                 }
             case .fail(_):
@@ -68,14 +72,18 @@ extension PairListVC {
 }
 
 // MARK: - CollectionView delegate/datasource
-extension PairListVC: UICollectionViewDataSource, UICollectionViewDelegate {
+extension PairListVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 80, height: 80)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        7
+        viewModel.pairList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritePairsCollectionViewCell.identifier,
                                                        for: indexPath) as? FavoritePairsCollectionViewCell else { return UICollectionViewCell() }
+        cell.configure(with: viewModel.pairList[indexPath.row])
         return cell
     }
 }

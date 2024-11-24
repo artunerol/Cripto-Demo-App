@@ -41,7 +41,6 @@ class PairListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cellContentView.backgroundColor = AppColor.background.getColor()
-        // Initialization code
     }
 
     override func prepareForReuse() {
